@@ -1,18 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/btnOpenProducts"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add Products"
+        android:layout_marginBottom="12dp"
+        android:layout_marginTop="80dp"/>
+
+    <Button
+        android:id="@+id/btnClearBasket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Clear Basket"
+        android:layout_marginBottom="16dp" />
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/tvTotal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Total: €0.00"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"
+        android:padding="8dp"
+        android:background="@android:color/background_light" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/tvEmptyBasket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Basket is empty"
+        android:gravity="center"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewBasket"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

@@ -26,6 +26,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".ProductListActivity"
+            android:exported="false"/>
+
     </application>
 
 </manifest>
