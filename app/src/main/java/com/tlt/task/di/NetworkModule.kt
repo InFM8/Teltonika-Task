@@ -1,5 +1,6 @@
 package com.tlt.task.di
 
+import com.tlt.task.data.api.ProductApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,8 +18,14 @@ object NetworkModule {
     @Singleton
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://mocki.io/v1/83e100f1-f50e-4d64-88a0-96424011f32d")
+            .baseUrl("https://mocki.io/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideApiService(retrofit: Retrofit): ProductApiService {
+        return retrofit.create(ProductApiService::class.java)
     }
 }
